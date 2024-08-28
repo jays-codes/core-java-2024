@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
+- Method reference demo
 - final and effectively final demo
 - UnaryOperator, BinaryOperator demo
 - Function, BiFunction demo, using andThen() and compose()
