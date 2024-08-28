@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
+- Function, BiFunction demo, using andThen() and compose()
 - Consumer, BiConsumer demo
 - Added demoes: Generic method for Predicate, BiPredicate
 - Added lambda Predicate demo
