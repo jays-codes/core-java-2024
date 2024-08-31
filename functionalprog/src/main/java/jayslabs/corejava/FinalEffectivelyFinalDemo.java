@@ -15,8 +15,8 @@ public class FinalEffectivelyFinalDemo {
         System.out.println(supplier2.getAsInt()); // Output: 40
         
         // Not effectively final (will cause compilation error if used in lambda)
-        int mutableVar = 30;
-        mutableVar = 40; // This assignment makes mutableVar not effectively final
+        //int mutableVar = 30;
+        //mutableVar = 40; // This assignment makes mutableVar not effectively final
         // IntSupplier supplier3 = () -> mutableVar * 2; // Compilation error
 
         // Using instance variables (which can be modified)
