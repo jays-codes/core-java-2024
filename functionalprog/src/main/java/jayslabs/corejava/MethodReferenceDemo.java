@@ -19,9 +19,10 @@ public class MethodReferenceDemo {
         //sample of Unbound method reference
         Function<String, Integer> strLength = String::length;
         System.out.println(strLength.apply("Hello"));
-
-
-
+        
+        //static method reference 
+        Function<Integer, Double> sqrt = Math::sqrt;
+        System.out.println(sqrt.apply(4));
 
         //another sample of bound method reference
         String prefix = "Hello";

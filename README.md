@@ -3,6 +3,8 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
+- Static and Constructor Method reference demo
+- CustomFileReader: use regex to find and replace credit card number with ****
 - Unbound method reference demo
 - updated bound method reference demo
 - Bound method reference demo
