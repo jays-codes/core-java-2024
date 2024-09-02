@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
+- Unbound method reference demo
 - updated bound method reference demo
 - Bound method reference demo
 - Method reference demo

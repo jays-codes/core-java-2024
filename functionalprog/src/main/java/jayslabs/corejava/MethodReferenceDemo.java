@@ -2,6 +2,7 @@ package jayslabs.corejava;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
@@ -16,7 +17,8 @@ public class MethodReferenceDemo {
         System.out.println(predicate.test("Hello"));
 
         //sample of Unbound method reference
-        
+        Function<String, Integer> strLength = String::length;
+        System.out.println(strLength.apply("Hello"));
 
 
 
@@ -26,5 +28,9 @@ public class MethodReferenceDemo {
         Supplier<Integer> lenSupplier = prefix::length;
         System.out.println(lenSupplier.get());
 
+        String str = "Hello";
+        Predicate<String> pred2 = str::startsWith;
+        System.out.println(pred2.test("H"));
+        System.out.println(pred2.test("h"));    
     }
 }
