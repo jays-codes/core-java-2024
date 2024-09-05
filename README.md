@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
+- Answered Assignment 2: Method References
 - Answered Assignment 1: Lambdas
 - Static and Constructor Method reference demo
 - CustomFileReader: use regex to find and replace credit card number with ****
