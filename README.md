@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
+- Streams Demo: laziness, anymatch, map
 - Streams Demo: creating streams, filter, count, peek, forEach
 - Answered Assignment 2: Method References
 - Answered Assignment 1: Lambdas
