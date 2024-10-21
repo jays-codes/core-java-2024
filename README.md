@@ -3,6 +3,8 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
+- collect() - demo of collect method with Supplier, accumulator, combiner
+- reduce() - count and total chars of all words in a stream: accumulator(BiFunction), combiner(BinaryOperator)
 - Demo of Terminal operations: forEach, reduce, collect, min, max, count, anyMatch, allMatch, noneMatch, findFirst, findAny
 - Stream creation demo: create stream from array, file, collection; try-with-resources
 - Streams Demo: laziness, anymatch, map
