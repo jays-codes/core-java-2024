@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
+- added samples: Collectors.joining(), Collectors.averagingInt(), Collectors.toMap(), Collectors.toMap(merge values function for duplicate keys), Collectors.toMap(merge function and supplier)
 - collect() - demo of collect method with Supplier, accumulator, combiner
 - reduce() - count and total chars of all words in a stream: accumulator(BiFunction), combiner(BinaryOperator)
 - Demo of Terminal operations: forEach, reduce, collect, min, max, count, anyMatch, allMatch, noneMatch, findFirst, findAny

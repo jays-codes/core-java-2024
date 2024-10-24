@@ -245,6 +245,7 @@ public class StreamsDemo {
         System.out.println("Total characters: " + totalChars);
     }
 
+    //collect demo - supplier, accumulator, combiner
     public static void collectDemo(){
         System.out.println("Collect demo");
         StringBuilder word = Stream.of("J", "a", "Doe", "y", "yow")
