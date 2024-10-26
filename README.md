@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
+- Collectors.partitioningBy() demo: with and without duplicates (using set and supplier to return a TreeMap) and sorted (using TreeSet)
 - Collectors.groupingBy() demo: with and without duplicates (using set and supplier to return a TreeMap) and sorted (using TreeSet)
 - added samples: Collectors.joining(), Collectors.averagingInt(), Collectors.toMap(), Collectors.toMap(merge values function for duplicate keys), Collectors.toMap(merge function and supplier)
 - collect() - demo of collect method with Supplier, accumulator, combiner

@@ -14,10 +14,12 @@ public class StreamsDemo2 {
         System.out.println("Streams Demo 2");
         //collectDemo();
         //collectDemo2();
-        collectToMap();
-        groupingByDemo1();
-        groupingByDemo2();
-        groupingByDemo3();
+        //collectToMap();
+        //groupingByDemo1();
+        //groupingByDemo2();
+        //groupingByDemo3();
+        partitioningByDemo();
+        partitioningByDemo2();
     }
 
     //collect demo - supplier, accumulator, combiner
@@ -124,4 +126,27 @@ public class StreamsDemo2 {
         );
         System.out.println("Output: " + map);
     }
+
+    //Collectors.partitioningBy demo
+    public static void partitioningByDemo(){
+        System.out.println("\nCollectors.partitioningBy demo string length > 3");
+        String[] pets = {"dog", "cat", "rat", "bird", "fish", "dog"};
+        System.out.println("Input: " + Arrays.toString(pets));
+        Map<Boolean, List<String>> map = Arrays.stream(pets)
+            .collect(Collectors.partitioningBy(s->s.length() > 3));
+        System.out.println("Output: " + map);
+    }
+
+    //Collectors.partitioningBy demo - group by length of string; use set to avoid duplicates
+    public static void partitioningByDemo2(){
+        System.out.println("\nCollectors.partitioningBy demo string length > 3; sorted and no duplicates");
+        String[] pets = {"dog", "cat", "rat", "bird", "fish", "dog"};
+        System.out.println("Input: " + Arrays.toString(pets));
+        Map<Boolean, Set<String>> map = Arrays.stream(pets)
+            .collect(Collectors.partitioningBy(
+                s->s.length() > 3, 
+                Collectors.toCollection(TreeSet::new)
+            ));
+        System.out.println("Output: " + map);
+    }   
 }
