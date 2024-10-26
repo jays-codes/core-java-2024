@@ -1,18 +1,23 @@
 package jayslabs.corejava;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 public class StreamsDemo2 {
     public static void main(String[] args) {
         System.out.println("Streams Demo 2");
         //collectDemo();
         //collectDemo2();
         collectToMap();
+        groupingByDemo1();
+        groupingByDemo2();
+        groupingByDemo3();
     }
 
     //collect demo - supplier, accumulator, combiner
@@ -82,5 +87,41 @@ public class StreamsDemo2 {
                 (s1, s2)->s1+"|"+s2, 
                 TreeMap::new));
         System.out.println("Output: " + map4);
+    }
+
+    //Collectors.groupingBy demo
+    public static void groupingByDemo1(){
+        System.out.println("\nCollectors.groupingBy demo 1");
+        String[] pets = {"dog", "cat", "rat", "bird", "fish", "dog"};
+        System.out.println("Input: " + Arrays.toString(pets));
+        Map<Integer, List<String>> map = Arrays.stream(pets)
+            .collect(Collectors.groupingBy(String::length));
+        System.out.println("Output: " + map);
+    }
+
+    //Collectors.groupingBy demo - group by length of string; use set to avoid duplicates
+    public static void groupingByDemo2(){
+        System.out.println("\nCollectors.groupingBy demo 2");
+        String[] pets = {"dog", "cat", "rat", "bird", "fish", "dog"};
+        System.out.println("Input: " + Arrays.toString(pets));
+        Map<Integer, Set<String>> map = Arrays.stream(pets)
+            .collect(Collectors.groupingBy(String::length, Collectors.toSet()));
+        System.out.println("Output: " + map);
+    }
+
+    //Collectors.groupingBy demo - group by length of string; 
+    //use supplier to return a TreeMap
+    public static void groupingByDemo3(){
+        System.out.println("\nCollectors.groupingBy demo 3");
+        String[] pets = {"dog", "cat", "rat", "bird", "fish", "dog"};
+        System.out.println("Input: " + Arrays.toString(pets));
+        Map<Integer, TreeSet<String>> map = Arrays.stream(pets)
+            .collect(Collectors.groupingBy(
+                String::length, 
+                TreeMap::new, 
+                Collectors.toCollection(TreeSet::new)
+            )
+        );
+        System.out.println("Output: " + map);
     }
 }
