@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
+- Primitive Streams demo
 - Streams Demo: Intermediate Operations - sorted()
 - Streams Demo: Intermediate Operations - flatMap()
 - Streams Demo: Intermediate Operations - map()
