@@ -3,6 +3,9 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
+- Streams Demo: Intermediate Operations - sorted()
+- Streams Demo: Intermediate Operations - flatMap()
+- Streams Demo: Intermediate Operations - map()
 - Streams Demo: Intermediate Operations - filter(), distinct(), limit()
 - Collectors.partitioningBy() demo: with and without duplicates (using set and supplier to return a TreeMap) and sorted (using TreeSet)
 - Collectors.groupingBy() demo: with and without duplicates (using set and supplier to return a TreeMap) and sorted (using TreeSet)
