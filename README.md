@@ -3,6 +3,8 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
+- Streams Assignment #1-7
+- Parallel Streams demo
 - Optionals Demo
 - Primitive Streams demo; added examples
 - Streams Demo: Intermediate Operations - sorted()
