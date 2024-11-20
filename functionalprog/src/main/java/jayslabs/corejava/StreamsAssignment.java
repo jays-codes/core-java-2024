@@ -5,10 +5,13 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+
+import jayslabs.corejava.entity.AnotherBook;
 
 public class StreamsAssignment {
     public static void main(String[] args) {
@@ -20,7 +23,14 @@ public class StreamsAssignment {
         //question5();
         //question5ans();
         //question6();
-        question7();
+        //question7();
+        //question8();
+        //question9();
+        //question10();
+        //question11();
+        //question12();
+        //question13();
+        question14();
     }
 
     public static void question1(){
@@ -150,6 +160,105 @@ public class StreamsAssignment {
         bookmap.forEach((k,v) -> {
             if (k.startsWith("A")) System.out.println(k + ": " + v);
         });
+    }
+
+    public static void question8(){
+        System.out.println("\n\nQuestion 8");
+
+        List<Book> books = Arrays.asList(
+            new Book("Gone with the wind", 5.0),
+            new Book("Gone with the wind", 10.0),
+            new Book("Atlas Shrugged", 15.0)
+        );
+
+        books.stream()
+        //.collect(Collectors.toMap((b->b.getTitle()), b->b.getPrice(), (v1,v2) -> v1*v2)) 
+        .collect(Collectors.toMap(Book::getTitle, Book::getPrice,(v1,v2) -> v1*v2))
+        .forEach((k,v) -> System.out.println(k + ": " + v));
+    }
+
+    public static void question9(){
+        System.out.println("\n\nQuestion 9");
+
+        List<Person> pList = Arrays.asList(
+            new Person("Bob", "Burke", 31),
+            new Person("Paul", "Peters", 32),
+            new Person("John", "Castle", 33)
+        );
+
+        double avg = pList.stream().filter(p -> p.getAge() < 43).mapToInt(Person::getAge).average().orElse(0.0);
+        System.out.println("Average age: " + avg);
+    }
+
+    public static void question10(){
+        System.out.println("\n\nQuestion 10");
+        
+        Optional<Double> price = Optional.ofNullable(34.6);
+        System.out.println(price);
+        
+        price.ifPresent(p -> System.out.println("Price: " + p));
+        System.out.println("Price orelse: " + price.orElse(0.0));
+        System.out.println("Price orelseget: " + price.orElseGet(()->100.0));
+
+        Optional<Double> price2 = Optional.ofNullable(null);
+        System.out.println("Price2: " + price2);
+        if (price2.isEmpty())
+            System.out.println("Price2 is empty");
+        price2.ifPresent(p -> System.out.println("Price2 ifpresent: " + p));
+
+        Optional<Double> price3 = Optional.ofNullable(null);
+        Double z = price3.orElseThrow(()->new RuntimeException("Bad code"));
+        System.out.println("Z: " + z);
+    }
+
+    public static void question11(){
+        System.out.println("\n\nQuestion 11");
+        
+        List<AnotherBook> books = Arrays.asList(
+            new AnotherBook("Gone with the wind", "Fiction"),
+            new AnotherBook("Bourne Ultimatum", "Thriller"),
+            new AnotherBook("The Client", "Thriller")
+        );
+
+        List<String> genres = books.stream().map(AnotherBook::getGenre).distinct().collect(Collectors.toList());
+        System.out.println("Genres: " + genres);
+    }
+
+    public static void question12(){
+        System.out.println("\n\nQuestion 12");
+
+        double sum = DoubleStream.of(0,2,4).filter(n -> n%2!=0).sum();
+        System.out.println("Sum: " + sum);
+    
+        Stream.of(1.0, 3.0, 0,2,4).mapToDouble(n -> n.doubleValue())
+        .filter(n -> n%2==0).average().ifPresent(System.out::println);
+    }
+
+    public static void question13(){
+        System.out.println("\n\nQuestion 13");
+
+        List<Integer> ls = Arrays.asList(11,11,22,33,33,55,66,77);
+        boolean result = ls.stream().distinct().anyMatch(n -> n==11);
+        System.out.println("Result: " + result);
+
+        boolean nonematch = ls.stream().distinct().noneMatch(x -> x%11>0);
+        System.out.println("Nonematch: " + nonematch);
+    }
+
+    public static void question14(){
+        System.out.println("\n\nQuestion 14");
+        //a.) because ai.incrementAndGet() never fires because the predicate always returns false
+        
+        AtomicInteger ai = new AtomicInteger();
+        Stream.of(11,11,22,33).parallel()
+        .filter(n->{
+            ai.incrementAndGet();
+            return n%2==0;
+        })
+        .forEach(System.out::println);
+        
+        System.out.println("ai: " + ai);
+
     }
 
     public static void question5ans(){
