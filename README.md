@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
+- LinkedList: addFirst(), addLast(), removeFirst(), removeLast()
 - Stack: push(), pop()
 - List: replaceAll(), set()
 - Collections practice; Collection methods: forEach(), removeIf(), Arrays.asList(), add()

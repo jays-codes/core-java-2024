@@ -2,16 +2,17 @@ package jayslabs.corejava.collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
-
 public class CollectionsNotes {
 
     public static void main(String[] args) {
         System.out.println("Collections Notes");
     
         //listDemo();
-        stackDemo();
+        //stackDemo();
+        linkedListDemo();
         
     }
 
@@ -63,5 +64,31 @@ public class CollectionsNotes {
         System.out.println("\nStack pop() demo");
         System.out.println("popped: " + strstack.pop());
         System.out.println(strstack);
+    }
+
+    public static void linkedListDemo() {
+        System.out.println("\nLinkedList demo");
+        LinkedList<String> strlist = new LinkedList<>();
+        strlist.add("anna");
+        strlist.add("bob");
+        strlist.add("charlie");
+        strlist.add("david");
+        System.out.println(strlist);
+
+        System.out.println("\nLinkedList addFirst() demo");
+        strlist.addFirst("edward");
+        System.out.println(strlist);
+
+        System.out.println("\nLinkedList addLast() demo");
+        strlist.addLast("apple");
+        System.out.println(strlist);
+
+        System.out.println("\nLinkedList removeFirst() demo");
+        strlist.removeFirst();
+        System.out.println(strlist);
+
+        System.out.println("\nLinkedList removeLast() demo");
+        strlist.removeLast();
+        System.out.println(strlist);
     }
 }
