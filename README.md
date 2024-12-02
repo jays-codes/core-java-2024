@@ -3,7 +3,9 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 proj: functionalprog (mvn, jdk21, junit5)
-- Collections practice; Collection methods: forEach(), removeIf() 
+- Stack: push(), pop()
+- List: replaceAll(), set()
+- Collections practice; Collection methods: forEach(), removeIf(), Arrays.asList(), add()
 - Streams Assignment #8-14
 - Streams Assignment #1-7
 - Parallel Streams demo
