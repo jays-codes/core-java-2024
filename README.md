@@ -2,6 +2,9 @@
 
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
+practice:
+- Factorial with recursive and iterative solution
+
 proj: functionalprog (mvn, jdk21, junit5)
 - LinkedList: addFirst(), addLast(), removeFirst(), removeLast()
 - Stack: push(), pop()

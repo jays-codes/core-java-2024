@@ -2,9 +2,12 @@ package jayslabs.corejava.collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 import java.util.Stack;
+
 public class CollectionsNotes {
 
     public static void main(String[] args) {
@@ -12,7 +15,8 @@ public class CollectionsNotes {
     
         //listDemo();
         //stackDemo();
-        linkedListDemo();
+        //linkedListDemo();
+        setDemo();
         
     }
 
@@ -91,4 +95,17 @@ public class CollectionsNotes {
         strlist.removeLast();
         System.out.println(strlist);
     }
+
+    public static void setDemo() {
+        System.out.println("\nSet demo");
+
+        Set<String> strset = new HashSet<>();
+        strset.add("anna");
+        strset.add("bob");
+        strset.add("charlie");
+        strset.add("david");
+        System.out.println(strset);
+
+        
+    }   
 }
