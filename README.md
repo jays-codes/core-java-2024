@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 practice:
+- Fibonacci, StringReverse, IsPalindrome
 - Factorial with recursive and iterative solution
 
 proj: functionalprog (mvn, jdk21, junit5)
