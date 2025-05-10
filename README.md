@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 package: jayslabs.corejava.coachv : notes and practice code created from coach Venkats lectures
+- Chap2: forEach(consumer), map(function), method reference, mapToInt(), IntStream.average(). orElse(), filter(predicate), skip(n), dropWhile(predicate), limit(n), takeWhile(predicate)
 - Chap1 topics: stream(), filter(predicate), mapToDouble(function), sum()
 
 
