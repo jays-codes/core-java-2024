@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 package: jayslabs.corejava.coachv : notes and practice code created from coach Venkats lectures
+- Chap2: Chap2ReducingCollection - reduce(accumulator), reduce(id, accumulator), accumulator is lambda returning the longer of two strings; .max(Comparator.comparing())
 - Chap2: Chap2PickingElement - used Optional<String>, .orElse(string)
 - Chap2: create Chap2ReusingLambdaExpressions: created method returning Predicate<String>, and another using inline Function -> Function<String, Predicate<String>>, both to be passed in .filter() 
 - Chap2: created reusable var for Predicate
