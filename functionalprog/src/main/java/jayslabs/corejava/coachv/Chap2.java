@@ -1,12 +1,16 @@
 package jayslabs.corejava.coachv;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Chap2 {
+
 
     public static void main(String[] args){
         final var friends = List.of("John", "Jane", "Jim", "Jill", "Jack", "Jenny", "Jake", "Jill", "Jack", "Jill");
     
+
+        final Predicate<String> nameLenNot4 = name -> name.length() != 4;
         //System.out.println("Friends: " + friends);
 
         //BP: functional iteration
@@ -25,8 +29,8 @@ public class Chap2 {
             .forEach(System.out::println);
 
         //avg of all integers
-        var nums = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        var avg = nums.stream()
+        final var nums = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        final var avg = nums.stream()
             .mapToInt(Integer::intValue)
             .average()
             .orElse(0.0);
@@ -35,13 +39,14 @@ public class Chap2 {
         
         //use filter()
         friends.stream()
-            .filter(name -> name.length() != 4)
+            .filter(nameLenNot4)    
+                //name -> nameLenNot4.test(name))
             .forEach(System.out::println);
 
         System.out.println("using dropWhile()");
         //dropWhile
         friends.stream()
-            .dropWhile(name -> name.length() != 4)
+            .dropWhile(nameLenNot4)
             .map(String::toUpperCase)
             .forEach(System.out::println);
 
