@@ -17,6 +17,18 @@ public class Person {
         return "Person [name=" + name + ", age=" + age + ", height=" + height + "]";
     }
 
+    public int ageDifference(Person other) {
+        return this.age - other.age;
+    }
+
+    public int heightComparator(Person other) {
+        return Double.compare(this.height, other.height);
+    }
+
+    public int nameComparator(Person other) {
+        return this.name.compareTo(other.name);
+    }
+
     //getters and setters
     public String getName() {
         return name;
@@ -25,6 +37,8 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
+
+
 
     public int getAge() {
         return age;
