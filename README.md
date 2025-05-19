@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 package: jayslabs.corejava.coachv : notes and practice code created from coach Venkats lectures
+- Chap3: C3Compare - added .min(Comparator), .max(Comparator) tests
 - Chap3: C3Compare - used .sorted(Comparator), (2) Comparator implementations: define method() calling compareTo(), call Comparator.comparing(T.x), reversed(); C3StringIteration - .chars(), forEach(Consumer), filter(Predicate)
 - Chap2: Chap2ReducingCollection - reduce(accumulator), reduce(id, accumulator), accumulator is lambda returning the longer of two strings; .max(Comparator.comparing())
 - Chap2: Chap2PickingElement - used Optional<String>, .orElse(string)
@@ -10,7 +11,6 @@ package: jayslabs.corejava.coachv : notes and practice code created from coach V
 - Chap2: created reusable var for Predicate
 - Chap2: forEach(consumer), map(function), method reference, mapToInt(), IntStream.average(). orElse(), filter(predicate), skip(n), dropWhile(predicate), limit(n), takeWhile(predicate)
 - Chap1 topics: stream(), filter(predicate), mapToDouble(function), sum()
-
 
 practice:
 - Fibonacci, StringReverse, IsPalindrome

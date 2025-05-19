@@ -24,7 +24,7 @@ public class C3Compare {
     final static List<Employee> employees = Arrays.asList(
         new Employee("John", 20, 6.5),
         new Employee("Sara", 21, 5.7),
-        new Employee("Jane", 21,4.11),
+        new Employee("Jane", 18,4.11),
         new Employee("Greg", 35, 5.11));
 
     final static Comparator<Employee> age = Comparator.comparing(Employee::age);
@@ -33,6 +33,27 @@ public class C3Compare {
     final static Comparator<Employee> name = Comparator.comparing(Employee::name);
 
     public static void main(String[] args) {
+        //sortingTest();
+
+        //System.out.println("youngest employee: ");
+        minTest();
+
+        //System.out.println("oldest employee: ");
+        maxTest();
+    }
+
+    public static void minTest(){
+        employees.stream().min(Comparator.comparing(Employee::age))
+        .ifPresent(emp -> System.out.println(emp.name() + " is the youngest employee"));
+    }
+
+    public static void maxTest(){
+        employees.stream().max(Comparator.comparing(Employee::age))  
+        .ifPresent(emp -> System.out.println(emp.name() + " is the oldest employee"));
+    }
+
+    // .sorted()
+    public static void sortingTest(){
         // List<Person> ascendingAge = people.stream()
 
         // .sorted(
@@ -51,5 +72,6 @@ public class C3Compare {
         .toList();
 
         sortedEmps.forEach(System.out::println);
+
     }
 }
