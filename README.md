@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 package: jayslabs.corejava.coachv : notes and practice code created from coach Venkats lectures
+- C3Collectors - Collectors, .toList(), .toMap(name, <Person>), .toSet(), .groupingBy(classifier, collector), .mapping(function, accumulator) 
 - C3Compare - used .thenComparing(comparator) to chain comparators; Defined comparator var
 - Chap3: C3Compare - added .min(Comparator), .max(Comparator) tests
 - Chap3: C3Compare - used .sorted(Comparator), (2) Comparator implementations: define method() calling compareTo(), call Comparator.comparing(T.x), reversed(); C3StringIteration - .chars(), forEach(Consumer), filter(Predicate)

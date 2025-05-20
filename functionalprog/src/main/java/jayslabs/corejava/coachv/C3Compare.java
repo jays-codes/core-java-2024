@@ -6,13 +6,6 @@ import java.util.List;
 
 import jayslabs.corejava.entity.Person;
 
-record Employee(String name, int age, double height) {
-    // Constructor
-    public Employee {
-        // Validation logic can be added here if needed
-    }
-} 
-
 public class C3Compare {
 
     final static List<Person> people = Arrays.asList(
@@ -23,11 +16,11 @@ public class C3Compare {
     new Person("Greg", 35, 5.11));
 
     final static List<Employee> employees = Arrays.asList(
-        new Employee("John", 20, 6.5),
-        new Employee("Sara", 21, 5.7),
-        new Employee("Jade", 21, 5.7),
-        new Employee("Jane", 21,4.11),
-        new Employee("Greg", 35, 5.11));
+        new Employee("John", 20, 6.5, "HR"),
+        new Employee("Sara", 21, 5.7, "IT"),
+        new Employee("Jade", 21, 5.7, "IT"),
+        new Employee("Jane", 21,4.11, "HR"),
+        new Employee("Greg", 35, 5.11, "IT"));
 
     final static Comparator<Employee> byAge = Comparator.comparing(Employee::age);
     final static Comparator<Employee> descendingAge = Comparator.comparing(Employee::age).reversed(); 
