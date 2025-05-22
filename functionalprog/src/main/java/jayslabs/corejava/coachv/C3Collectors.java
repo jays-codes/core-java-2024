@@ -1,8 +1,10 @@
 package jayslabs.corejava.coachv;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors; 
 
 import jayslabs.corejava.entity.Person;
@@ -10,7 +12,7 @@ import jayslabs.corejava.entity.Person;
 public class C3Collectors {
 
     final static List<Person> people = Arrays.asList(
-        new Person("John", 20, 6.5),
+        new Person("John", 28, 6.5),
         new Person("Sara", 21, 5.7),
         new Person("Jane", 24,4.11),
         new Person("Anya", 21, 5.7),
@@ -26,9 +28,10 @@ public class C3Collectors {
     public static void main(String[] args) {
         // Collectors
 
-        testGroupingBy();
+        //testGroupingBy();
         //testCollect();
         //testCollectToMap();
+        oldestPersonGroupByLetter();
     }
 
     public static void testCollect(){
@@ -66,5 +69,15 @@ public class C3Collectors {
         );
         //System.out.println("Employees by dept: " + employeesByDept);
 
+    }
+
+    public static void oldestPersonGroupByLetter(){
+
+        Comparator<Person> byAge = Comparator.comparing(Person::getAge);
+        System.out.println("Grouping by 1st letter, sorted by age: " +
+            people.stream()
+            .collect(Collectors.groupingBy(p -> p.getName().charAt(0),
+                Collectors.reducing(BinaryOperator.maxBy(byAge)))));
+                
     }
 }
