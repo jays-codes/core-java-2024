@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 package: jayslabs.corejava.coachv : notes and practice code created from coach Venkats lectures
+- C3FilesAndDirectories - watchFileChange() : event notifier when there are changes to a directory/file. Used WatchService, .poll(), WatchKey, .pollEvents(), Path.register(wsrvc, StandardWatchEventKinds.ENTRY_MODIFY)
 - C3FilesAndDirectories - .filter(), .newDirectoryStream(), listSelectFiles(), listSubDirs()
 - C3FilesAndDirectories - Files, Paths, .list(), .get(), Path, isDirectory()
 - C3Collectors - used groupingBy(), reducing(BinaryOperator.maxBy(comparator)) to get map where key is 1st char of name, and val is eldest if persons under that k (reducing)

@@ -3,19 +3,45 @@ package jayslabs.corejava.coachv;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardWatchEventKinds;
+import java.nio.file.WatchKey;
+import java.nio.file.WatchService;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class C3FilesAndDirectories {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("C3FilesAndDirectories");
         //testFilesAndDirectories();
         //listAllFilesInADir();
         //listSelectFilesInADir();
         //listSelectFiles2();
-        listSubDirs();
+        //listSubDirs();
+        watchFileChange();
+    }
+
+    public static void watchFileChange() throws IOException, InterruptedException {
+        final Path path = Paths.get(".");
+        final WatchService wsrvc = path.getFileSystem().newWatchService();
+
+        path.register(wsrvc, StandardWatchEventKinds.ENTRY_MODIFY);
+
+        System.out.println("Watching for file changes in: " + path.toAbsolutePath());
+    
+        final WatchKey key = wsrvc.poll(5, TimeUnit.MINUTES);
+
+        if (key != null) {
+            key.pollEvents().stream().forEach(event -> {
+                System.out.println("File changed: " + event.context());
+                System.out.println("Event kind: " + event.kind());
+            });
+        } else {
+            System.out.println("No file changes detected within the timeout period.");
+        }
     }
 
     public static void listSubDirs() throws IOException {
