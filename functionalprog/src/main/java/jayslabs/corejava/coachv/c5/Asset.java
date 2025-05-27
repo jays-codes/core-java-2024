@@ -28,4 +28,22 @@ public class Asset {
             .mapToInt(Asset::getValue)
             .sum();
     }
+
+    public static void main(String[] args) {
+        List<Asset> assets = List.of(
+            new Asset(AssetType.BOND, 1000),
+            new Asset(AssetType.STOCK, 1500),
+            new Asset(AssetType.BOND, 2000),
+            new Asset(AssetType.STOCK, 2500)
+        );
+
+        // Total all assets
+        System.out.println("Total Asset Values: " + totalAssetValues(assets, asset -> true));
+
+        // Total bonds only
+        System.out.println("Total Bond Values: " + totalAssetValues(assets, asset -> asset.getType() == AssetType.BOND));
+
+        // Total stocks only
+        System.out.println("Total Stock Values: " + totalAssetValues(assets, asset -> asset.getType() == AssetType.STOCK));
+    }
 }
