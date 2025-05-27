@@ -3,6 +3,7 @@
 Jay's proj repo for Core Java practice. List below ARE NOT NOTES. They are topics covered.
 
 package: jayslabs.corejava.coachv : notes and practice code created from coach Venkats lectures
+- package c5: Lambda and design; Asset class to demo Strategy Pattern with Lambda (predicate)
 - C4FlatMappingAndFilteringAndTeeing: .flatMapping(), .filtering(), .teeing()
 - C4ComputingStatistics - Counting Occurences - Collectors.partitioningBy(predicate);groupingBy(classifier, func);collectingAndThen(); transforming data - .map(), flatMap(), .mapToDouble(); Stats - .average(), Collectors.averagingDouble(func)/summarizingDouble(func), .sum(), .min(), .max(), .anyMatch/noneMatch(predicate)
 - C3FilesAndDirectories - watchFileChange() : event notifier when there are changes to a directory/file. Used WatchService, .poll(), WatchKey, .pollEvents(), Path.register(wsrvc, StandardWatchEventKinds.ENTRY_MODIFY)
